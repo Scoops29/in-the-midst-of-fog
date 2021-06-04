@@ -1,0 +1,8 @@
+03/06/2021 
+- Edge layer seems the most promising 
+- Model = State machines? = log device history 
+- match low level traffic with high level traffic
+- mozilla firefox gateway, look into gateways
+- edge layer extended api that IoT devices MUST use to communicate allowing traffic to be logged and discrepencies to be found 
+
+Initial steps are to narrow down the scope of the project to allow for a solid plan and to research recent literature (check EdgeSec references).
