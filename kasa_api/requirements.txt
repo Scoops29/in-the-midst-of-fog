@@ -1,0 +1,5 @@
+kasa == 2.6.1 
+asyncio == 3.4.3
+Flask == 3.0.12
+DateTime == 4.3
+Flask-SQLAlchemy == 2.5.1

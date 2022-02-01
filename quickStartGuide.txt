@@ -1,0 +1,43 @@
+quick start guide to setup system 
+
+These scripts work together on a local system and have several different authentication steps as well as port tunelling for them to work, this guide provides the steps required for a user 
+to setup this system on their own, some of these steps may provide complications due to the owner of the app being required to help authentication in the pre deployment stage. 
+
+requirements:
+- for each API the corresponding python packages need to be installed these can founf in the requirement.txt of each folder
+- ngrok also needs to be downloaded and added to the system path : https://ngrok.com , this will allow port tunneling so the webhook can access your flask app 
+
+devices used: 
+- lifx Mini Colour (https://uk.lifx.com/products/lifx-mini-color?variant=45344426761&gclid=CjwKCAjwmeiIBhA6EiwA-uaeFYohegHeXEcwM8fBnvIAuox03iQCq_Vp8W_85yNGG_sA7vi5EXL4ThoC5xUQAvD_BwE)
+- netatmo smart indoor camera (https://www.netatmo.com/en-gb/security/cam-indoor)
+- kasa smart wifi plug (https://www.kasasmart.com/us/products/smart-plugs/kasa-smart-plug-energy-monitoring-hs110)
+
+Device setup 
+lifx Mini Colour: 
+- download the lifx and setup your bulb with a wifi connection (https://apps.apple.com/us/app/lifx/id657758311, https://play.google.com/store/apps/details?id=com.lifx.lifx&hl=en_GB&gl=US)
+- login to your lifx cloud account and generate an access token (https://cloud.lifx.com)
+- copy this access token into the "headers" variable in lix_api.py
+
+kasa smart wifi plug
+- download the kasa smart app and setup according to instructions (https://apps.apple.com/gb/app/kasa-smart/id1034035493, https://play.google.com/store/apps/details?id=com.tplink.kasa_android&hl=en_GB&gl=US)
+- install kasa python via terminal, and use "kasa discover" to find the ip of any device on your network, this should return the ip of your plug copy and paste this into the "ip" variable in kasa_api.py
+
+netatmo smart indoor camera 
+- users should download the netatmo security app and connect their device to the wifi, it is also advised to setup face id with recognised faces (https://apps.apple.com/gb/app/home-security/id951725393, https://play.google.com/store/apps/details?id=com.netatmo.camera&hl=en_GB&gl=US)
+- users need to give their credentials to the owner of the app to use it (this is standard for the develpopment stage with netatmo authentication)
+- Client ID and Client Secret will remain the same for any user however a user should input their own credentials for "username" and "password" in netatmo_script.py 
+
+script setup 
+lifx and kasa:
+- with the correct credentials in lifx_api.py and kasa_api.py running both scripts should run the flask app and allow you to access them on the given port, ensure to run them in different terminals
+- ensure they are running on different ports by checking the port defined in "app.run()" at the end of each script
+
+netatmo_script:
+- run ngrok http http://localhost:443 to open tunnel a tunnel copy and paste the http url generated as a tunnel for the webhook into the "webhook_url" variable in netatmo_script.py
+- run netatmo_script.py, the rest can be done through api calls to the flask app.
+- http://localhost:443/login  generates a link to allow device access to the flask app, follow this link and allow access to all devices 
+- http://localhost:443/get_access generates an access token and starts the webhook, running this will setup your webhook and the data should start being sent to the flask app 
+
+use: 
+- api calls to lifx_api.py and kasa_api.py can be made through a browser to interact with devices 
+- webhook events can be monitered at http://localhost:4040/inspect/http events can be replayed for testing purposes.

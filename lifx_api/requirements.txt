@@ -1,0 +1,5 @@
+requests == 2.25.1
+Flask == 3.0.12
+DateTime == 4.3
+json5 == 0.9.6
+Flask-SQLAlchemy == 2.5.1

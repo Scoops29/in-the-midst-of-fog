@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<HTML>
+    <BODY>
+        <h> Kasa extended API</h>
+        <p>simple home page with example calls </p>
+        <p>this is the resource you are at now, the home page: </p>
+        <A HREF = "http://127.0.0.1:80/">http://127.0.0.1:80/ </A> 
+        <br><p>this resource returns the state of the device:</p>
+        <A HREF = "http://127.0.0.1:80/api/devices/kasa"> http://127.0.0.1:80/api/devices/kasa</A>
+        <br><p>this resource switches the device on and off: </p>
+        <A HREF = "http://127.0.0.1:80/api/devices/kasa/switch"> http://127.0.0.1:80/api/devices/kasa/switch</A>
+        <br><p>this resource turns on the switch for a certain time, you need to add key value pairs at the end so the server knows how long for, like so: "?time=10"</p>
+        <A HREF = "http://127.0.0.1:80/api/devices/kasa/timer?time=10"> http://127.0.0.1:80/api/devices/kasa/timer?time=10 </A>
+    </BODY>
+</HTML>

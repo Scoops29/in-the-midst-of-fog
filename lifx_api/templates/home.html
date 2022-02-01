@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<HTML>
+    <BODY>
+        <h> Lifx extended API</h>
+        <p>simple home page with example calls </p>
+        <p>this is the resource you are at now, the home page: </p>
+        <A HREF = "http://127.0.0.1:5000/">http://127.0.0.1:5000/ </A> 
+        <br><p>this resource returns the state of the device:</p>
+        <A HREF = "http://127.0.0.1:5000/api/devices/lifx"> http://127.0.0.1:5000/api/devices/lifx</A>
+        <br><p>this resource switches the device on and off: </p>
+        <A HREF = "http://127.0.0.1:5000/api/devices/lifx/switch"> http://127.0.0.1:5000/api/devices/lifx/switch</A>
+        <br><p>this resource changes the colour, you need to add key value pairs at the end so the server knows what colour to change to, like so: "?colour=red":</p>
+        <A HREF = "http://127.0.0.1:5000/api/devices/lifx/colour?colour=red"> http://127.0.0.1:5000/api/devices/lifx/colour?colour=red</A>
+        <br><p>this resource turns on the light for a certain time, you need to add key value pairs at the end so the server knows how long for, like so: "?time=3":</p>
+        <A HREF = "http://127.0.0.1:5000/api/devices/lifx/timer?time=3"> http://127.0.0.1:5000/api/devices/lifx/timer?time=3 </A>
+        <br><p>this resource changes the colour for a certain time, you need to add key value pairs at the end so the server knows what colour to change to and for how long, like so: "?time=10&colour=red":</p>
+        <A HREF = "http://127.0.0.1:5000/api/devices/lifx/colourTime?time=10&colour=red"> http://127.0.0.1:5000/api/devices/lifx/colourTime?time=10&colour=red </A>
+    </BODY>
+</HTML>

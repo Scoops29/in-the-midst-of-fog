@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<HTML>
+    <BODY>
+        <h> Netatmo script with webhook</h>
+        <p>simple home page with example calls </p>
+        <p>this is the resource you are at now, the home page: </p>
+        <A HREF = "http://127.0.0.1:443/">http://127.0.0.1:443/ </A> 
+        <br><p>this resource generates a link that can be used to login to netatmo and authorize this script to access the device, it only needs to be done once:</p>
+        <A HREF = "http://127.0.0.1:443/login"> http://127.0.0.1:443/login</A>
+        <br><p>this resource generates an access token with your credentials and sets up the webhook to receive event data: </p>
+        <A HREF = "http://127.0.0.1:443/setup"> http://127.0.0.1:443/setup</A>
+        <br><p>this resource is the webhook endpoint, it will not return anything as it is constantly listening for events, but it can still be accessed:</p>
+        <A HREF = "http://127.0.0.1:443/webhook"> http://127.0.0.1:443/webhook </A>
+    </BODY>
+</HTML>
